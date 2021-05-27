@@ -79,7 +79,7 @@ In the current stage (May 27, 2021), Google API Client Library (gapi) for JavaSc
 ></script>
 <script>
   // Please set the service account.
-  const obj = {
+  const object = {
     private_key: "-----BEGIN PRIVATE KEY-----\n###-----END PRIVATE KEY-----\n",
     client_email: "###",
     scopes: ["https://www.googleapis.com/auth/drive.readonly"],
@@ -87,7 +87,7 @@ In the current stage (May 27, 2021), Google API Client Library (gapi) for JavaSc
 
   const handleClientLoad = () =>
     gapi.load("client", async () =>
-      gapi.auth.setToken(await GetAccessTokenFromServiceAccount.do(obj))
+      gapi.auth.setToken(await GetAccessTokenFromServiceAccount.do(object))
     );
 
   function run() {
@@ -112,6 +112,8 @@ In the current stage (May 27, 2021), Google API Client Library (gapi) for JavaSc
 ```
 
 - When this script is run, the file list of the Google Drive of the service account is obtained.
+
+- For example, when an error like `Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('file://') does not match the recipient window's origin ('null').` occurred, please try to run the HTML on the server instead of the local PC.
 
 ---
 
